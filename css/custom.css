@@ -9,13 +9,10 @@
   z-index: -1;
 }
 
-/* KEYFRAMES */
-
 @-webkit-keyframes animateBubble {
   0% {
     margin-top: 1000px;
   }
-
   100% {
     margin-top: -100%;
   }
@@ -71,7 +68,6 @@
   }
 }
 
-/* ANIMATIONS */
 .x1 {
   -webkit-animation: animateBubble 25s linear infinite,
     sideWays 2s ease-in-out infinite alternate;
@@ -185,7 +181,7 @@
 }
 
 .x9 {
-  -webkit-animation: animateBubble 29s linear infinite,
+    -webkit-animation: animateBubble 29s linear infinite,
     sideWays 4s ease-in-out infinite alternate;
   -moz-animation: animateBubble 29s linear infinite,
     sideWays 4s ease-in-out infinite alternate;
@@ -196,7 +192,9 @@
   -webkit-transform: scale(0.6);
   -moz-transform: scale(0.6);
   transform: scale(0.6);
+
 }
+
 
 .x10 {
   -webkit-animation: animateBubble 26s linear infinite,
@@ -284,7 +282,7 @@
   position: relative;
   opacity: 0;
   transform: scale(0.9);
-  animation: popup 1s ease-out forwards;
+  animation: popup 2s ease-out forwards;
 }
 
 .popup-animated-lines::before,
@@ -294,19 +292,19 @@
   height: 2px;
   width: 0;
   background: #ff6600;
-  animation: drawLines 1s ease-out forwards;
+  animation: drawLines 2s ease-out forwards;
 }
 
 .popup-animated-lines::before {
   top: 0;
   left: 0;
-  animation-delay: 0.3s;
+  animation-delay: 1s;
 }
 
 .popup-animated-lines::after {
   bottom: 0;
   right: 0;
-  animation-delay: 0.6s;
+  animation-delay: 1s;
 }
 
 @keyframes popup {
