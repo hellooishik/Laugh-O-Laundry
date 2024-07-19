@@ -345,6 +345,16 @@
   animation: popAnimation 2s ease-in-out infinite;
   opacity: 0;
 }
+@media (min-width: 1200px) {
+  .time-open-wrap {
+      position: absolute;
+      top: 50%;
+      left: 70px !important;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  }
+}
 .popup-image-1 {
   top: 10%;
   left: 5%;
