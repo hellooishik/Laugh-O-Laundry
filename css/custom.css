@@ -352,7 +352,6 @@ background-color: rgba(0, 0, 0, 1) !important;
   position: absolute;
   height: 2px;
   width: 0;
-  background: #ff6600;
   animation: drawLines 2s ease-out forwards;
 }
 
