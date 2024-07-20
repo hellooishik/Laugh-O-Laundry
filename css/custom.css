@@ -601,7 +601,7 @@
     font-size: 2em;
     text-align: center;
     color: black;
-    font-weight: 400;
+    font-weight: 700;
     animation: fadeIn 3s ease-in-out, colorChange 10s infinite alternate;
     border: 2px solid white;
     padding: 20px;
