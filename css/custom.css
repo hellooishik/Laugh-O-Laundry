@@ -600,7 +600,7 @@
   h2 {
     font-size: 2em;
     text-align: center;
-    color: white;
+    color: black;
     animation: fadeIn 3s ease-in-out, colorChange 10s infinite alternate;
     border: 2px solid white;
     padding: 20px;
