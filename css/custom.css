@@ -8,7 +8,38 @@
   background-color: rgba(0, 0, 0, 1) !important;
   z-index: 1; /* Ensure the footer content is above the overlay */
 }
-
+.list-cover{
+  position: relative;
+  background-image: url(/images/grid.webp);
+  padding-top: 5vh;
+  z-index: 1; /* Ensure the footer content is above the overlay */
+}
+.list-cover-two{
+  position: relative;
+  background-image: url(/images/grid2.webp);
+  z-index: 1; /* Ensure the footer content is above the overlay */
+  background-color: rgb(255, 255, 255) !important;
+}
+.list-cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity to make it darker */
+  z-index: -1; /* Ensure the overlay is behind the footer content */
+}
+.list-cover-two::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Adjust the opacity to make it darker */
+  z-index: -1; /* Ensure the overlay is behind the footer content */
+}
 .footer-cover::before {
   content: "";
   position: absolute;
@@ -561,3 +592,8 @@
     color: #fff;
     font-weight: bold;
   }
+
+
+  /* try */
+
+

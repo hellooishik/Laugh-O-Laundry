@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+      body {
+        background: #071129;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      a {
+        font-family: "Lexend", sans-serif;
+        color: #ffffff;
+      }
+
+      h1 {
+        font-size: 80px;
+        font-weight: 800;
+        line-height: 90px;
+      }
+
+      h2 {
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 60px;
+      }
+
+      h3 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 50px;
+      }
+
+      h4 {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 40px;
+        font-family: "Lexend", sans-serif;
+      }
+
+      p {
+        font-family: "Lexend", sans-serif;
+        color: #848b9f;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+      }
+
+      .container {
+        max-width: 1400px;
+        height: auto;
+        position: relative;
+        margin: auto;
+      }
+
+      .cursor {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        margin: -250px 0 0 -250px;
+        box-shadow: inset -25px -25px 50px #152758, inset 25px 25px 50px #000000;
+        will-change: transform;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        pointer-events: none;
+        z-index: 100;
+        top: 0;
+        left: 0;
+      }
+
+      .shapes {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        /*   overflow: hidden; */
+      }
+      .shapes .shape {
+        will-change: transform;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .shapes .shape.shape-1 {
+        background: #071129;
+        box-shadow: inset -25px -25px 50px #152758, inset 25px 25px 50px #000000;
+        width: 1400px;
+        height: 1400px;
+        margin: -700px 0 0 -700px;
+      }
+      .shapes .shape.shape-2 {
+        background: #071129;
+        box-shadow: inset -25px -25px 50px #152758, inset 25px 25px 50px #000000;
+        width: 1100px;
+        height: 1100px;
+        margin: -550px 0 0 -550px;
+      }
+      .shapes .shape.shape-3 {
+        background: #071129;
+        box-shadow: inset -25px -25px 50px #152758, inset 25px 25px 50px #000000;
+        width: 800px;
+        height: 800px;
+        margin: -400px 0 0 -400px;
+      }
+
+      .background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        background: #071129;
+        box-shadow: inset -25px -25px 50px #152758, inset 25px 25px 50px #000000;
+        content: "";
+      }
+
+      .one {
+        width: 1400px;
+        height: 1400px;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        transition: all 0.8s ease;
+      }
+
+      .two {
+        width: 1100px;
+        height: 1100px;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        transition: all 0.8s ease;
+      }
+
+      .three {
+        width: 820px;
+        height: 820px;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        transition: all 0.8s ease;
+      }
+
+      .four {
+        width: 510px;
+        height: 510px;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        transition: all 0.8s ease;
+      }
+
+      .roadmap-section {
+        height: 1400px;
+        z-index: 10;
+        position: relative;
+      }
+
+      .w-50 {
+        width: 50%;
+        height: auto;
+      }
+
+      .w-25 {
+        width: 25%;
+        height: auto;
+      }
+
+      .title-container {
+        display: flex;
+        padding: 100px 0px;
+        jusify-content: center;
+        align-items: center;
+      }
+
+      .years ul {
+        width: 100%;
+        display: inline-flex;
+        justify-content: flex-end;
+      }
+
+      .years ul li {
+        padding-right: 50px;
+        width: auto;
+        font-family: "Lexend", sans-serif;
+        color: #848b9f;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        transition: all 0.8s ease;
+        cursor: pointer;
+      }
+
+      .years ul li:nth-child(last) {
+        padding: 0;
+      }
+
+      .years ul li:hover,
+      .years ul .active {
+        color: #ffffff;
+      }
+
+      .roadmap-content {
+        width: 100%;
+        height: auto;
+        padding: 60px 0px;
+        display: flex;
+      }
+
+      .quarter {
+        text-align: center;
+        position: relative;
+      }
+
+      .quarter ul {
+        list-style: none;
+      }
+
+      .quarter-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        transition: all 0.8s ease;
+      }
+
+      .quarter-title h2 {
+        color: #ffffff36;
+        /*   text-shadow:-5px -5px 5px #152758, 5px 5px 5px #000000; */
+      }
+
+      .quarter-content {
+        opacity: 0;
+        transition: all 0.8s ease;
+      }
+
+      .active .quarter-title {
+        opacity: 0;
+      }
+
+      .active .quarter-content {
+        opacity: 1;
+      }
+
+      @media only screen and (max-width: 1440px) {
+        .container {
+          max-width: 1200px;
+        }
+        .roadmap-content {
+          padding: 40px 0px;
+        }
+
+        @media only screen and (max-width: 1080px) {
+          .container {
+            max-width: 1200px;
+          }
+          .roadmap-content {
+            padding: 0px 0px;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="background">
+        <!--     <div class="circle one"></div>
+      <div class="circle two"></div>
+      <div class="circle three"></div>
+      <div class="circle four"></div> -->
+        <div class="cursor"></div>
+
+        <div class="shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
+      </div>
+      <div class="roadmap-section">
+        <div class="title-container">
+          <div class="title w-50">
+            <p>Roadmap</p>
+            <h2>Future Plans</h2>
+          </div>
+          <div class="years w-50">
+            <ul>
+              <li class="active">2021</li>
+              <li>2022</li>
+              <li>2023</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-content">
+          <div class="w-25 quarter q1">
+            <div class="quarter-title">
+              <h2>Q1</h2>
+              <h2>2022</h2>
+            </div>
+            <div class="quarter-content">
+              <h4>Q1 - 2022</h4>
+              <ul>
+                <li>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    In risus risus, placerat quis augue in, iaculis dictum
+                    purus.
+                  </p>
+                  <p />
+                </li>
+                <li><p>Fusce non augue id velit faucibus pharetra.</p></li>
+                <li>
+                  <p>
+                    Quisque laoreet orci a urna scelerisque accumsan ac ut
+                    mauris.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-25 quarter q2">
+            <div class="quarter-title">
+              <h2>Q2</h2>
+              <h2>2022</h2>
+            </div>
+            <div class="quarter-content">
+              <h4>Q2 - 2022</h4>
+              <ul>
+                <li>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    In risus risus, placerat quis augue in, iaculis dictum
+                    purus.
+                  </p>
+                  <p />
+                </li>
+                <li><p>Fusce non augue id velit faucibus pharetra.</p></li>
+                <li>
+                  <p>
+                    Quisque laoreet orci a urna scelerisque accumsan ac ut
+                    mauris.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-25 quarter q3">
+            <div class="quarter-title">
+              <h2>Q3</h2>
+              <h2>2022</h2>
+            </div>
+            <div class="quarter-content">
+              <h4>Q3 - 2022</h4>
+              <ul>
+                <li>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    In risus risus, placerat quis augue in, iaculis dictum
+                    purus.
+                  </p>
+                  <p />
+                </li>
+                <li><p>Fusce non augue id velit faucibus pharetra.</p></li>
+                <li>
+                  <p>
+                    Quisque laoreet orci a urna scelerisque accumsan ac ut
+                    mauris.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-25 quarter q4">
+            <div class="quarter-title">
+              <h2>Q4</h2>
+              <h2>2022</h2>
+            </div>
+            <div class="quarter-content">
+              <h4>Q4 - 2022</h4>
+              <ul>
+                <li>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    In risus risus, placerat quis augue in, iaculis dictum
+                    purus.
+                  </p>
+                  <p />
+                </li>
+                <li><p>Fusce non augue id velit faucibus pharetra.</p></li>
+                <li>
+                  <p>
+                    Quisque laoreet orci a urna scelerisque accumsan ac ut
+                    mauris.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.body.addEventListener("mousemove", (event) => {
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+
+        gsap.set(".cursor", {
+          x: mouseX,
+          y: mouseY,
+        });
+
+        gsap.to(".shape", {
+          x: mouseX,
+          y: mouseY,
+          stagger: -0.05,
+        });
+      });
+
+      const q1 = document.querySelector(".q1");
+      const q2 = document.querySelector(".q2");
+      const q3 = document.querySelector(".q3");
+      const q4 = document.querySelector(".q4");
+
+      q1.addEventListener("mouseenter", (e) => {
+        document.querySelector(".q1").classList.add("active");
+        // if(q1.classList.contains('active')){
+        //   one.style.left = "-80px";
+        //   two.style.left = "-230px"
+        //   three.style.left = "-370px"
+        //   four.style.left = "-520px"
+        // }
+        if (
+          q2.classList.contains("active") ||
+          q3.classList.contains("active") ||
+          q4.classList.contains("active")
+        ) {
+          q2.classList.remove("active");
+          q3.classList.remove("active");
+          q4.classList.remove("active");
+        }
+      });
+
+      q2.addEventListener("mouseenter", (e) => {
+        document.querySelector(".q2").classList.add("active");
+        // if(q2.classList.contains('active')){
+        //   one.style.left = "0px";
+        //   two.style.left = "-60px"
+        //   three.style.left = "-110px"
+        //   four.style.left = "-170px"
+        // }
+        if (
+          q1.classList.contains("active") ||
+          q3.classList.contains("active") ||
+          q4.classList.contains("active")
+        ) {
+          q1.classList.remove("active");
+          q3.classList.remove("active");
+          q4.classList.remove("active");
+        }
+      });
+
+      q3.addEventListener("mouseenter", (e) => {
+        document.querySelector(".q3").classList.add("active");
+        // if(q3.classList.contains('active')){
+        //   one.style.left = "0px";
+        //   two.style.left = "60px"
+        //   three.style.left = "110px"
+        //   four.style.left = "170px"
+        // }
+        if (
+          q1.classList.contains("active") ||
+          q2.classList.contains("active") ||
+          q4.classList.contains("active")
+        ) {
+          q1.classList.remove("active");
+          q2.classList.remove("active");
+          q4.classList.remove("active");
+        }
+      });
+
+      q4.addEventListener("mouseenter", (e) => {
+        document.querySelector(".q4").classList.add("active");
+        // if(q4.classList.contains('active')){
+        //   one.style.left = "80px";
+        //   two.style.left = "230px"
+        //   three.style.left = "370px"
+        //   four.style.left = "520px"
+        // }
+        if (
+          q1.classList.contains("active") ||
+          q2.classList.contains("active") ||
+          q3.classList.contains("active")
+        ) {
+          q1.classList.remove("active");
+          q2.classList.remove("active");
+          q3.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
