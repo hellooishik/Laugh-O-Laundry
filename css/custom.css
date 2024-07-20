@@ -597,3 +597,45 @@
   /* try */
 
 
+  h2 {
+    font-size: 2em;
+    text-align: center;
+    color: white;
+    animation: fadeIn 3s ease-in-out, colorChange 10s infinite alternate;
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes colorChange {
+    0% { border-color: white; }
+    50% { border-color: #ff00ff; }
+    100% { border-color: cyan; }
+}
+
+h2::before, h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: white;
+    animation: lineGrow 3s ease-in-out;
+}
+
+h2::before {
+    margin-bottom: 10px;
+}
+
+h2::after {
+    margin-top: 10px;
+}
+
+@keyframes lineGrow {
+    from { width: 0; }
+    to { width: 100%; }
+}
