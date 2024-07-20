@@ -1,4 +1,7 @@
 
+.overlay{
+  background-color: rgba(0, 0, 0, 1) !important;
+}
 /* Add your bubble animation CSS here */
 #background-wrap {
   bottom: 0;
@@ -7,6 +10,7 @@
   right: 0;
   top: 0;
   z-index: -1;
+  
 }
 
 @-webkit-keyframes animateBubble {
@@ -358,33 +362,31 @@
 .popup-image-1 {
   top: 10%;
   left: 5%;
-  animation-delay: 0.5s;
+  animation: popAnimation 5s ease-in-out infinite;
+  animation-delay: 0.2s;
 }
 .popup-image-2 {
-  top: 54%;
-  right: -3%;
-  animation-delay: 1s;
+  top: 50%;
+  right: 29%;
+  animation: popAnimation 5s ease-in-out infinite;
+  animation-delay: 0.2s;
 }
-.popup-image-3 {
-  bottom: 30%;
-  left: 15%;
-  animation-delay: 1.5s;
-}
-.popup-image-4 {
-  bottom: 10%;
-  right: 10%;
-  animation-delay: 2s;
-}
+
 @keyframes popAnimation {
-  0%, 100% {
+  0%, 10% {
     transform: scale(0);
     opacity: 0;
   }
-  50% {
+  20%, 60% {
     transform: scale(1);
     opacity: 1;
   }
+  90%, 100% {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
+
 
   /* Table Styles */
       /* Table Styles */
