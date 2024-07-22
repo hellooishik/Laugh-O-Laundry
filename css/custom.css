@@ -26,6 +26,12 @@
 z-index: -55;
 background-color: rgba(0, 0, 0, 1) !important;
 }
+.service-roll-five{
+  
+  background-image: url(/images/vecteezy_a-happy-housekeeper-is-carrying-a-bucket-cloths-for-laundry_5140826.jpg);
+z-index: -77;
+background-color: rgba(0, 0, 0, 1) !important;
+}
 .list-cover::before {
   content: "";
   position: absolute;
