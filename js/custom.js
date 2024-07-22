@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// This set of the documents is been set to the mainfram
+
+// document.getElementById("table").forEach((bubble) =>{
+//   this.data == data;
+//   this.set == set ;
+// })
 document.querySelectorAll(".qty button").forEach((button) => {
   button.addEventListener("click", () => {
     const qtySpan = button.parentElement.querySelector("span");
@@ -27,6 +33,15 @@ document.querySelectorAll(".qty button").forEach((button) => {
   });
 });
 
+// This Section is been separated into the three parts
+
+// Price List of Man
+
+// Price List of Women
+
+// Price List of Kids
+
+// Price List of HouseHolds
 const prices = {
   "SINGLE BED SHEET": [15, 25, 50, 10],
   "DOUBLE BED SHEET": [15, 25, 50, 10],
@@ -47,7 +62,7 @@ const prices = {
   "SPORTS WEAR": [15, 25, null, 10],
   "DHOTI / LUNGI": [30, 50, 75, 20],
   SHERWANI: [40, 60, 80, 20],
-  "JACKET / SWEAT SHIRT": [40, 60, 80, 20],
+  "JACKET SWEAT SHIRT": [40, 60, 80, 20],
   "WINTER JACKET": [null, null, 120, null],
   "WOOLEN JACKET": [40, null, 100, 15],
   KURTA: [20, 30, 50, 15],
