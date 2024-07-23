@@ -1,3 +1,41 @@
+.highlight {
+  border: 2px solid #ff6347; /* Highlight border color */
+  background-color: #fff5e6; /* Highlight background color */
+  animation: highlightAnim 1.5s infinite; /* Highlight animation */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  z-index: 10; /* Adjusted z-index */
+  position: relative; /* Ensure it respects the z-index */
+}
+
+@keyframes highlightAnim {
+  0% { box-shadow: 0 0 10px #ff6347; }
+  50% { box-shadow: 0 0 20px #ff6347; }
+  100% { box-shadow: 0 0 10px #ff6347; }
+}
+
+
+
+
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.icon img {
+  margin-right: 15px;
+}
+
+.media-body p {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400 !important;
+}
+
+
+
 .table-cover{
 
   background-image: url(/images/8178472.jpg);
@@ -20,6 +58,9 @@
   z-index: -77; /* Ensure the footer content is above the overlay */
   background-color: rgb(255, 255, 255) !important;
 }
+
+
+
 .service-roll{
   
   background-image: url(/images/gridfour.webp);
