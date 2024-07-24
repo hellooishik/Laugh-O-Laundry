@@ -45,10 +45,11 @@
   background-image: url(/images/51984.jpg);
   background-color: rgba(0, 0, 0, 1) !important;
   z-index: 0; /* Ensure the footer content is above the overlay */
+  padding-top: 5em;
 }
 .list-cover{
   position: relative;
-  background-image: url(/images/grid.webp);
+  background-color: yellow;
   padding-top: 5vh;
   z-index: -77; /* Ensure the footer content is above the overlay */
 }
@@ -670,8 +671,8 @@ margin: auto;
 padding: 60px 0;
 }
 .card__bx {
---dark-color: #2e2e2e;
---dark-alt-color: #777777;
+--dark-color: #0074BC;
+--dark-alt-color: #ffffff;
 --white-color: #ffffff;
 --button-color: #333333;
 --transition: 0.5s ease-in-out;
