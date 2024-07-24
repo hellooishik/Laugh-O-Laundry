@@ -8775,7 +8775,28 @@ h1, h2, h3, h4, h5,
 
 .appointment .btn-primary:hover {
   color: #f3e53d !important; }
-
+  .arrow-container {
+    position: absolute;
+    width: 100%;
+    top: 60px; /* Adjust this value to position the arrow correctly */
+    left: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .custom-arrow {
+    width: 60%; /* Adjust the width as needed */
+    animation: draw 2s ease-in-out infinite;
+  }
+  
+  @keyframes draw {
+    0%, 100% {
+      stroke-dasharray: 0 100;
+    }
+    50% {
+      stroke-dasharray: 100 0;
+    }
+  }
 .work {
   display: block;
   width: 100%;
