@@ -1,3 +1,30 @@
+.card__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.best-seller {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.other-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+
+
+
+
+
+
 .highlight {
   border: 2px solid #ff6347; /* Highlight border color */
   background-color: #fff5e6; /* Highlight background color */
@@ -59,6 +86,30 @@
   z-index: -77; /* Ensure the footer content is above the overlay */
   background-color: rgb(255, 255, 255) !important;
 }
+.best-seller-badge {
+  background-color: #ffcc00;
+  color: #333;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0; /* Start with opacity 0 for fade-in effect */
+  animation: fadeIn 0.5s ease-in-out forwards; /* Animation name, duration, easing, and fill mode */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); /* Optional: Slide down effect */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 
